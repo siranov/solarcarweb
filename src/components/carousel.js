@@ -1,6 +1,9 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carousel CSS
+import comp from '../assets/comp.jpg';
+import carshow from "../assets/carshow.jpg";
+import work from "../assets/work.jpg";
 
 function AutomaticCarousel() {
     return (
@@ -14,9 +17,9 @@ function AutomaticCarousel() {
             emulateTouch // Enable touch emulation for mobile
             interval={3000} // Set the interval for autoPlay in milliseconds
         >
-            <CarItem src="https://today.appstate.edu/_images/_posts/2021/08/sunergy-wins/sunergy-wins-glides.jpg" legend={"Salam"}/>
-            <CarItem src="https://www.americansolarchallenge.org/2024/assets/images/team_photos_thumb/2.jpg" legend={"Salam"}/>
-            <CarItem src="https://www.americansolarchallenge.org/2024/assets/images/team_photos_thumb/2.jpg" legend={"Salam"}/>
+            <CarItem src={comp} legend={"Solar Car Project at Competition!"}/>
+            <CarItem src={carshow} legend={"Team showcase at Competition"}/>
+            <CarItem src={work} legend={"Working at the competition"}/>
         </Carousel>
     );
 }
