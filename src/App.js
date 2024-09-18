@@ -5,6 +5,8 @@ import CarSassy from './components/homeComponents/carSassy';
 import insta from "./assets/insta.png";
 import MeshComponent from './components/spinner';
 import { Canvas } from "@react-three/fiber";
+import AutomaticCarousel from './components/carousel';
+import logo from './assets/logo512.png';
 
 function App() {
   const [page, setPage] = useState("Home");
@@ -16,7 +18,7 @@ function App() {
   );
 
   function HomePage() {
-    return <>
+    return <div className="flex flex-col justfy-center items-center">
       <Divider stops={[
         {
           "color": "FF5C02",
@@ -68,11 +70,9 @@ function App() {
 \nCheck out our latest advances and even\n our timeline on the right.`}</div>
         </div>
         <div className="w-[40px]"></div>
-        <div className="h-[300px] w-[400px] mr-[40px] whitespace-pre-line text-center flex justify-center items-center text-sm bg-[#515151]">{`4 Progress Photos/Major Milestones:
-Aero shell
-Chassis construction
-Battery box finished
-team goes to first competition`}</div>
+        <div className="h-[300px] w-[400px] relative  bg-[#515151] rounded-md">
+          <AutomaticCarousel/> 
+        </div>
       </div>
       <Divider stops={[
         {
@@ -94,12 +94,67 @@ team goes to first competition`}</div>
           "percent": 100,
         },
       ]} />
-      <div className="flex flex-col p-[20px]">
-        <div className="text-xl">Meat our Leads</div>
+      <div className="flex flex-col p-[20px] w-[900px] self-center left-auto right-auto">
+        <div className="text-xl">Meet our Leads</div>
+        <div className="mb-12">
+          <h2 className="text-xl font-semibold mb-6">EXECUTIVES</h2>
+          <div className="grid grid-cols-3 gap-6">
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-green-300 to-green-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Aleksei Macatuno</h3>
+              <p>Founder & President</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-green-300 to-green-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Ariana Desai</h3>
+              <p>Co-Founder & VP/Treasurer</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-green-300 to-green-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Simran Pravin</h3>
+              <p>Secretary</p>
+            </div>
+          </div>
+        </div>
 
+        <div className="w-[900px] left-0 right-0">
+          <h2 className="text-xl font-semibold mb-6">TECHNICAL LEADS</h2>
+          <div className="grid grid-cols-6 gap-6">
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-orange-300 to-orange-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Aleksei Macatuno</h3>
+              <p>Chassis Lead</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-orange-300 to-orange-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Ariana Desai</h3>
+              <p>Aerodynamics Lead</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-orange-300 to-orange-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Simran Pravin</h3>
+              <p>Driver Ops Lead</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-orange-300 to-orange-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Ashton Beattie</h3>
+              <p>Electrical Systems Lead</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-orange-300 to-orange-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Pranav Jayakumar</h3>
+              <p>Sys. and Controls Lead</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-orange-300 to-orange-600 w-24 h-24 rounded-full mx-auto"></div>
+              <h3 className="font-bold">Zhangir Siranov</h3>
+              <p>Sys. and Controls Lead</p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="h-[450px] bg-black w-[100%] flex flex-row p-[20px]">
+      <div className="w-full bg-black flex items-center justify-center">
+      <div className="h-[450px] bg-black w-[900px] flex flex-row p-[20px] self-center">
         <div className="w-[345px] flex-col">
           <div className="font-bold">Team email: </div>
           <div className="font-normal">uopsolarcar@gmail.com</div>
@@ -125,18 +180,19 @@ Stockton, CA 95211`}</div>
           <div className="h-[20px]"></div>
           <div className="flex flex-row items-center">
             <div className="h-[40px] w-[40px] rounded-md flex items-center justify-center bg-[#450696]">
-                <img className='h-[30px] w-[30px]' src={insta}/>
+              <img className='h-[30px] w-[30px]' src={insta} />
             </div>
             <div className="w-[10px]"></div>
             <div className="h-[30px] pl-[20px] pr-[20px] rounded-md flex items-center bg-[#450696]">@pacific.solarcar</div>
           </div>
         </div>
         <div className="w-[20px]"></div>
-        {/* <Canvas>
-        <MeshComponent/>
-        </Canvas> */}
+        <div className="h-[200px] w-[200px] self-center">
+          <img src={logo}></img>
+        </div>
       </div>
-    </>;
+      </div>
+    </div>;
   }
 
 
